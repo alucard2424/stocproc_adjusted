@@ -6,7 +6,7 @@ from __future__ import division, print_function
 
 # from .tools import ComplexInterpolatedUnivariateSpline
 # from functools import lru_cache
-import fcSpline
+import fastcubicspline
 from functools import partial
 import logging
 import mpmath
@@ -549,7 +549,7 @@ def get_dt_for_accurate_interpolation(t_max, tol, ft_ref, diff_method=_absDiff):
 
         ft_ref_n[1::2] = np.array(ft_ref_n_new)
 
-        ft_intp = fcSpline.FCS(x_low=0, x_high=t_max, y=ft_ref_n_old)
+        ft_intp = fastcubicspline.FCS(x_low=0, x_high=t_max, y=ft_ref_n_old)
 
         pool = Pool()
         try:
