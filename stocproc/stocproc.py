@@ -14,7 +14,7 @@ import tempfile
 
 from . import method_kle
 from . import method_ft
-import fcSpline
+import fastcubicspline
 
 import logging
 
@@ -305,7 +305,7 @@ class StocProc(abc.ABC):
             # random complex normal samples
             y = np.random.normal(
                 scale=self._one_over_sqrt_2, size=2 * self.get_num_y()
-            ).view(np.complex)
+            ).view(np.complex128)
         else:
             if len(y) != self.get_num_y():
                 raise RuntimeError(
@@ -325,10 +325,10 @@ class StocProc(abc.ABC):
             )
         )
         t0 = time.time()
-        self._interpolator = fcSpline.FCS(x_low=0, x_high=self.t_max, y=self._z)
+        self._interpolator = fastcubicspline.FCS(x_low=0, x_high=self.t_max, y=self._z)
 
         if self.calc_deriv:
-            self._interpolator_dot = fcSpline.FCS(
+            self._interpolator_dot = fastcubicspline.FCS(
                 x_low=0, x_high=self.t_max, y=self._z_dot
             )
 
