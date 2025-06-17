@@ -4,3 +4,4 @@ from .stocproc import StocProc_FFT
 from .stocproc import StocProc_KLE
 from .stocproc import StocProc_TanhSinh
 from .stocproc import Cholesky
+__version__ = "1.1.2"
