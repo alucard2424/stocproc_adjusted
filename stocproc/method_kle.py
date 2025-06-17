@@ -523,7 +523,7 @@ def auto_ng(
                     tfine, sqrt_lambda_ui_fine, noWarning=True
                 )
             else:
-                sqrt_lambda_ui_spl = fcSpline.FCS(
+                sqrt_lambda_ui_spl = fastcubicspline.FCS(
                     x_low=0, x_high=t_max, y=sqrt_lambda_ui_fine
                 )
             time_spline += time.time() - t0
