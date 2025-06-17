@@ -26,5 +26,5 @@ Cython = "^0.29.25"
 black = "^24.3.0"
 
 [build-system]
-requires = ["poetry>=1.5", "cython", "setuptools", "numpy"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61", "wheel", "cython", "numpy"]
+build-backend = "setuptools.build_meta"
