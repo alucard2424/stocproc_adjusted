@@ -6,7 +6,7 @@ import time
 from . import stocproc_c
 from . import gquad
 from . import tools
-import fcSpline
+import fastcubicspline
 
 import logging
 
