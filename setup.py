@@ -16,7 +16,7 @@ setup(
     name="stocproc",
     version="1.1.2",
     description="Stochastic Processes in Python",
-    author="Alucard",
+    author="cimatosa,
     packages=["stocproc"],
     ext_modules=cythonize(extensions, language_level=3),
     install_requires=[
